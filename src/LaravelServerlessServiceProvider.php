@@ -1,6 +1,6 @@
 <?php
 
-namespace sagarchauhan\LaravelServerlessServiceProvider;
+namespace sagarchauhan;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelServerlessServiceProvider extends ServiceProvider
