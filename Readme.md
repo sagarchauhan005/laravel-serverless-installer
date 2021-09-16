@@ -1,4 +1,4 @@
-# Laravel Serverles Installer
+# Laravel Serverless Installer
 
 A simple laravel installer package that guides you into installing a fully optimised Laravel Serverless app
 
