@@ -60,8 +60,8 @@ class VendorPublish extends Command
      */
     public function handle()
     {
-        $asset = $this->argument(self::TAG);
-        if($asset == self::TAG){
+        $asset = $this->argument("serverless");
+        if($asset == "serverless"){
             File::copy(__DIR__.'/sagar-laravel-serverless-installer.sh', app()->basePath() . '/sagar-laravel-serverless-installer.sh');
             File::copy(__DIR__.'/Makefile', app()->basePath() . '/Makefile');
             $this->info("Publishing complete.");

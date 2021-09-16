@@ -29,6 +29,6 @@ class LaravelServerlessServiceProvider extends ServiceProvider
 
         $this->commands([
             VendorPublish::class,
-        ],'serverless');
+        ]);
     }
 }
