@@ -16,7 +16,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "sagarchauhan\\LaravelServerlessServiceProvider"
+                "src\\sagarchauhan\\LaravelServerlessServiceProvider"
             ]
         }
     },
