@@ -15,7 +15,7 @@
     ],
     "scripts": {
         "post-root-package-install": [
-            "php -r \"copy('vendor/sagarchauhan/laravel-serverless-installer/src/serverless.yml', 'sagar-laravel-serverless-installer.sh');\""
+            "@php -r \"copy('vendor/sagarchauhan/laravel-serverless-installer/src/serverless.yml', 'sagar-laravel-serverless-installer.sh');\""
         ]
     },
     "minimum-stability" : "dev"
