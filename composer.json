@@ -13,10 +13,13 @@
             "email": "coolsagar005@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {"sagarchauhan\\": "src/"}
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "src\\sagarchauhan\\LaravelServerlessServiceProvider"
+                "sagarchauhan\\LaravelServerlessServiceProvider"
             ]
         }
     },
