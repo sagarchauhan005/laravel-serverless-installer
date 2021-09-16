@@ -1,0 +1,59 @@
+service: km-max-ai-laravel-service
+useDotenv: true
+provider:
+    name: aws
+    # The AWS region in which to deploy (us-east-1 is the default)
+    region: ap-south-1
+    stage: production
+    environment:
+      APP_ENV: production
+      QUEUE_CONNECTION: sqs
+      SQS_QUEUE: ${construct:jobs.queueUrl}
+    # The stage of the application, e.g. dev, production, staging… ('dev' is the default)
+    runtime: provided.al2
+  # Enable new serverless.yml features to avoid deprecation warnings
+    apiGateway:
+      shouldStartNameWithService: true
+    lambdaHashingVersion: 20201221
+
+package:
+    # Directories to exclude from deployment
+    exclude:
+      - node_modules/**
+      - public/storage
+      - storage/**
+      - tests/**
+
+    include:
+      - .env
+
+functions:
+    # This function runs the Laravel website/API
+    web:
+        handler: public/index.php
+        timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
+        layers:
+          - ${bref:layer.php-74-fpm}
+  #    # This function lets us run artisan commands in Lambda such as scheduler for cron
+    artisan:
+      handler: artisan
+      timeout: 120 # in seconds
+      layers:
+        - ${bref:layer.php-74} # PHP
+        - ${bref:layer.console} # The "console" layer
+      events:
+        - schedule:
+            rate: cron(* * * * ? *)   # Use (cron(30 18 * * ? *)) for 12pm midnight time (UTC)
+            input: '"schedule:run >> /dev/null 2>&1"'
+
+constructs:
+  jobs:
+    type: queue
+    worker:
+      handler: worker.php
+      layers:
+        - ${bref:layer.php-74}
+
+plugins:
+  - ./vendor/bref/bref
+  - serverless-lift

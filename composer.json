@@ -1,0 +1,22 @@
+{
+    "name": "sagarchauhan/laravel-serverless-installer",
+    "description": "Laravel Serverless Installer",
+    "version": "0.0.1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sagarchauhan.gh",
+            "email": "sagar.chauhan@greenhonchos.com"
+        },
+        {
+            "name": "sagar chauhan",
+            "email": "coolsagar005@gmail.com"
+        }
+    ],
+    "scripts": {
+        "post-install-cmd": [
+            "php -r \"copy('src/sagar-laravel-serverless-installer.sh', 'sagar-laravel-serverless-installer.sh');\""
+        ]
+    },
+    "minimum-stability" : "dev"
+}
