@@ -1,6 +1,6 @@
 {
     "name": "sagarchauhan/laravel-serverless-installer",
-    "description": "Laravel Serverless Installer",
+    "description": "Laravel Serverless Installer for all laravel apps",
     "version": "0.0.1",
     "license": "MIT",
     "authors": [
