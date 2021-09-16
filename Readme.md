@@ -3,11 +3,11 @@
 A simple laravel installer package that guides you into installing a fully optimised Laravel Serverless app
 
 # Screenshot
-![Imgur](https://i.imgur.com/LkCJBwD.jpg)
-
 ![Imgur](https://i.imgur.com/x0cEVtu.jpg)
 
 # Installation
+
+![Imgur](https://i.imgur.com/zsetLNA.jpg)
 
 Run `composer require sagarchauhan/laravel-serverless-installer` into your app and then follow the steps.
 
