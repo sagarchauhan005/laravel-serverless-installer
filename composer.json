@@ -13,10 +13,12 @@
             "email": "coolsagar005@gmail.com"
         }
     ],
-    "scripts": {
-        "post-package-install": [
-            "@php -r \"copy('vendor/sagarchauhan/laravel-serverless-installer/src/serverless.yml', 'sagar-laravel-serverless-installer.sh');\""
-        ]
+    "extra": {
+        "laravel": {
+            "providers": [
+                "sagarchauhan\\LaravelServerlessServiceProvider"
+            ]
+        }
     },
     "minimum-stability" : "dev"
 }
