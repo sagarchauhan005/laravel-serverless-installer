@@ -34,6 +34,8 @@ functions:
         timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
         layers:
           - ${bref:layer.php-74-fpm}
+        events:
+          - httpApi: '*'
   #    # This function lets us run artisan commands in Lambda such as scheduler for cron
     artisan:
       handler: artisan
