@@ -1,4 +1,4 @@
-service: km-max-ai-laravel-service
+service: km-dummy-laravel-service
 useDotenv: true
 provider:
     name: aws
