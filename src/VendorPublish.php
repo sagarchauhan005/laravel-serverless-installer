@@ -62,8 +62,9 @@ class VendorPublish extends Command
     {
         $asset = $this->argument("asset");
         if($asset == "serverless"){
-            copy(__DIR__.'/sagar-laravel-serverless-installer.sh', app()->basePath() . '/sagar-laravel-serverless-installer.sh');
+            //copy(__DIR__.'/sagar-laravel-serverless-installer.sh', app()->basePath() . '/sagar-laravel-serverless-installer.sh');
             copy(__DIR__.'/Makefile', app()->basePath() . '/Makefile');
+            copy(__DIR__ . '/serverless-installer', app()->basePath() . '/vendor/bin/serverless-installer');
             $this->info("Publishing complete.");
         }
         else{

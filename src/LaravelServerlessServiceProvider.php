@@ -26,6 +26,7 @@ class LaravelServerlessServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/sagar-laravel-serverless-installer.sh' => app()->basePath() . '/sagar-laravel-serverless-installer.sh',
             __DIR__ . '/Makefile' => app()->basePath() . '/Makefile',
+            __DIR__ . '/serverless-installer' => app()->basePath() . '/vendor/bin/serverless-installer',
         ], 'serverless');
 
         $this->commands([

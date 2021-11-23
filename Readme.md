@@ -38,16 +38,18 @@ $app->register(sagarchauhan\LaravelServerlessServiceProvider::class);
 ## Run Setup in CorePHP
 
   ```
-  chmod +x vendor/sagarchauhan/laravel-serverless-installer/src/sagar-laravel-serverless-installer.sh
-  ./vendor/sagarchauhan/laravel-serverless-installer/src/sagar-laravel-serverless-installer.sh 
+  ./vendor/bin/serverless-installer 
   ```
 
 ## Run Setup (In Lumen/Laravel)
 
   ```
-  chmod +x sagar-laravel-serverless-installer.sh
-  ./sagar-laravel-serverless-installer.sh 
+  ./vendor/bin/serverless-installer
   ```
+
+## Global Setup (Ubuntu)
+
+Move the `vendor/bin/serverless-installer` to `/usr/bin` or `/usr/local/bin` and then run `serverless-installer` to setup the serverless framework.
 
 ## Post Installation (Manual task)
 
@@ -68,6 +70,7 @@ AWS_DEFAULT_REGION=ap-south-1
 QUEUE_CONNECTION=sqs
 SQS_PREFIX=<you-will-get-this-once-you-deploy-your-app-till-then-you-can-leave-empty>  #put the actual value on second deployment
 SQS_QUEUE=<you-will-get-this-once-you-deploy-your-app-till-then-you-can-leave-empty>   #put the actual value on second deployment
+ASSET_URL=https://<bucket-name>.s3.ap-south-1.amazonaws.com #required for apps that have front-end and back-end coupled
 ```
 4. For enabling scheduler, open your `Kernal.php` file inside `app/Console.`Inside schedule function add 
 ````
